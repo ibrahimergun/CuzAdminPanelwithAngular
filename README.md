@@ -1,4 +1,4 @@
-# CuzAdmin
+# CuzAdmin Angular
 
 ## Installation Guide
 
