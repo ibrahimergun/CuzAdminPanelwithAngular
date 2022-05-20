@@ -1,0 +1,10 @@
+<section ng-include="'views/partials/header.html'" id="header"></section>
+<div id="controls">
+    <aside ng-include="'views/partials/menu.html'" id="sidebar" class="aside-fixed"></aside>
+</div>
+<div class="view-container" ui-view-container>
+    <section  id="content">
+        <ui-view></ui-view>
+
+    </section>
+</div>

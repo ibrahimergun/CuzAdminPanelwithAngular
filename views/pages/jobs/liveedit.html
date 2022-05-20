@@ -1,0 +1,195 @@
+<div class="page page-users" ng-controller="editliveJobs">
+
+    <div class="pageheader">
+
+        <h2> Live Job Title | {{jobProfile.job.title}}</h2>
+
+
+
+    </div>
+
+    <!-- row -->
+    <div class="row">
+
+
+        <div class="col-md-12">
+
+            <!-- tile -->
+            <section class="tile tile-simple">
+
+
+                <!-- tile body -->
+                <div class="tile-body">
+
+                    <form name="form" class="form-horizontal form-validation" role="form" novalidate>
+
+                        <div class="form-group mt-20">
+                            <label for="ID" class="control-label col-sm-1">ID</label>
+                           <div class="col-sm-2 offset">
+                                <input type="text" ng-model="jobProfile.job.id"   class="form-control underline-input" id="ID" disabled>
+                            </div>
+
+                            <label  for="jobStatus" class="control-label col-sm-3">Job Status</label>
+                            <div class="col-sm-2 offset">
+                                <input  type="text" ng-model="jobProfile.job.status"   class="form-control underline-input" id="jobStatus" disabled >
+                            </div>
+
+                        </div>
+
+                        <div class="form-group mt-20">
+                            <label for="title" class="control-label col-sm-1">Job Title</label>
+                            <div class="col-sm-4 offset">
+                                <input type="text" name="title" class="form-control" id="title"  ng-model="jobProfile.job.title" >
+                            </div>
+                            <label  for="job_type" class="control-label col-sm-1">Job Type</label>
+                            <div class="col-sm-2 offset">
+                                <input type="text" name="job_type" class="form-control underline-input" id="job_type" ng-disabled="true" ng-model="jobProfile.job.job_type">
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-20">
+                            <label for="nature" class="control-label col-sm-1">Job Nature</label>
+                            <div class="col-sm-4 offset">
+                                <input type="text"  class="form-control" id="nature" placeholder="Job name..." ng-model="jobProfile.job.nature.name" >
+                            </div>
+
+                        </div>
+
+                        <div class="form-group mt-20">
+                            <label for="from_language" class="col-sm-1 control-label">From Language</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="from_language" class="form-control" id="from_language"   ng-model="jobProfile.job.from_language.name">
+                            </div>
+
+                            <label for="to_language" class="col-sm-1 control-label">To Language</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="to_language" class="form-control" id="to_language"   ng-model="jobProfile.job.to_language.name">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group mt-20">
+                            <label for="address" class="col-sm-1 control-label">Address</label>
+                            <div class="col-sm-4">
+                                <textarea name="address" id="address"  rows="3" ng-model="jobProfile.job.address" class="form-control"></textarea>
+                            </div>
+
+
+                            <div class="col-sm-2">
+                                <label for="lang" class="control-label">Langitude</label>
+                                <input type="text" name="to_language" class="form-control underline-input" id="lang"   ng-model="jobProfile.job.longitude">
+                            </div>
+
+                            <div class="col-sm-2">
+                                <label for="lat" class="control-label">Latitude</label>
+                                <input type="text" name="to_language" class="form-control underline-input" id="lat"   ng-model="jobProfile.job.latitude">
+
+                            </div>
+                            <div class="col-sm-1">
+                                <span><a href="" class="btn btn-blue"><i class="fa fa-map-marker"></i> Show In Map</a></span>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="form-group mt-20">
+                            <label for="start" class="col-sm-1 control-label">Job Start Date</label>
+                            <div class="col-sm-4">
+
+                                <input name="start" id="start"  ng-model="jobProfile.job.job_start_date | date : format : shortDate" class="form-control">
+                            </div>
+
+                            <label for="end" class="col-sm-1 control-label">Job End Date</label>
+                            <div class="col-sm-4">
+
+                                <input type="text" name="" class="form-control" id="end"   ng-model="jobProfile.job.job_end_date | date : format : shortDate">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group mt-20">
+                            <label for="totalHour" class="col-sm-1 control-label">Total Hours</label>
+                            <div class="col-sm-4">
+                                <input type="text"  class="form-control" id="totalHour"   ng-model="jobProfile.job.total_hour">
+                            </div>
+                            <label for="totalDay" class="col-sm-1 control-label">Total Days</label>
+                            <div class="col-sm-4">
+
+                                <input type="text"  class="form-control" id="totalDay"   ng-model="jobProfile.job.total_day">
+
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="form-group mt-20">
+
+                            <label for="customer" class="col-sm-1 control-label">Customer</label>
+                            <div class="col-sm-4">
+
+                                <input  id="Customer"  ng-model="jobProfile.job.customer.address" class="form-control underline-input">
+                            </div>
+
+                            <label for="translator" class="col-sm-1 control-label">Translator</label>
+                            <div class="col-sm-4">
+
+                                <input  id="translator"  ng-model="jobProfile.job.address" class="form-control underline-input">
+                            </div>
+                        </div>
+                        <div class="form-group mt-20">
+                            <label for="requestDate" class="col-sm-1 control-label">Request Date</label>
+                            <div class="col-sm-4">
+                                <input  id="requestDate"  ng-model="jobProfile.job.request_date | date : format : medium" class="form-control underline-input">
+                            </div>
+                            <label for="responseDate" class="col-sm-1 control-label">Response Date</label>
+                            <div class="col-sm-4">
+                                <input type="text"  class="form-control underline-input" id="responseDate"   ng-model="jobProfile.job.response_date | date : format : medium">
+
+                            </div>
+                        </div>
+                        <div class="form-group mt-20">
+                            <label for="is_granted" class="col-sm-1 control-label">is Granted</label>
+                            <div class="col-sm-4">
+                                <select chosen="{width: '100%'}" name="status" class="form-control" id="is_granted"
+                                        ng-model="jobProfile.job.is_granted">
+
+                                    <option>Onaylandı</option>
+                                    <option>Reddedildi</option>
+                                    <option>Beklemede</option>
+
+                                </select>
+                            </div>
+
+                            <label for="is_in_progress" class="col-sm-1 control-label">is in Progress</label>
+                            <div class="col-sm-4">
+                                <select chosen="{width: '100%'}" name="status" class="form-control" id="is_in_progress"
+                                        ng-model="jobProfile.job.is_in_progress">
+
+                                    <option>Onaylandı</option>
+                                    <option>Reddedildi</option>
+                                    <option>Beklemede</option>
+
+                                </select>
+                            </div>
+                        <hr>
+                        <div class="form-footer" style="padding: 0 100px;">
+                            <button class="btn btn-success b-0 pull-right" ng-click="jobliveupdate()" ng-disabled="form.$invalid">Submit</button>
+                            <button class="btn btn-lightred btn-ef btn-ef-4 btn-ef-4c" ui-sref="home.livejobs"><i class="fa fa-arrow-left"></i> Cancel</button>
+                        </div>
+
+
+                    </form>
+
+
+                </div>
+                <!-- /tile body -->
+
+
+            </section>
+            <!-- /tile -->
+
+        </div>
+
+    </div>
+    <!-- /row -->
+
+</div>
+
+

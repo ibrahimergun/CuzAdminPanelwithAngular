@@ -1,0 +1,336 @@
+<div class="page page-users" ng-controller="editTranslator">
+
+    <div class="pageheader">
+
+        <h2>Edit User | {{translatorProfile.translator_request.translator.user_profile.user.username}}</h2>
+
+    </div>
+    <!-- row -->
+    <div class="row">
+
+        <div class="col-md-12">
+            <!-- tile -->
+            <section class="tile tile-simple">
+
+                <!-- tile body -->
+                <div class="tile-body">
+
+                    <form name="form" class="form-horizontal form-validation" role="form" novalidate>
+                        <div class="form-group mt-20">
+                            <div class="col-sm-2 text-center">
+                                <aside>
+                                    <div class="thumb thumb-xl">
+                                        <img src="assets/images/random-avatar7.jpg" alt="" class="img-circle">
+                                    </div>
+                                </aside>
+                            </div>
+                            <div class="col-sm-2 offset">
+                                <label for="ID" class="control-label">ID</label>
+                                <input type="text" value="12314564"  class="form-control underline-input" id="ID" disabled>
+                            </div>
+                            <div class="col-sm-2 offset">
+                            </div>
+                            <div class="col-sm-2 offset">
+                                <label  for="Date" class="control-label">Date Joined</label>
+                                <input  type="text" value="10.10.2016"  class="form-control underline-input" id="Date" disabled >
+                            </div>
+                        </div>
+                        <div class="form-group mt-20">
+                            <label for="username" class="col-sm-1 control-label">User Name</label>
+                            <div class="col-sm-4 offset">
+                                <input type="text" ng-model="translatorProfile.translator_request.translator.user_profile.user.username"  class="form-control" id="username">
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-20">
+                            <label for="first_name" class="col-sm-1 control-label">First Name</label>
+                            <div class="col-sm-4 offset">
+                                <input type="text" ng-model="translatorProfile.translator_request.translator.user_profile.user.first_name"  class="form-control" id="first_name">
+                            </div>
+                            <label for="last_name" class="col-sm-1 control-label">Last Name</label>
+                            <div class="col-sm-4 offset">
+                                <input type="text" ng-model="translatorProfile.translator_request.translator.user_profile.user.last_name" name="last_name" class="form-control" id="last_name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="col-sm-1 control-label">Email <span class="text-danger" style="font-size: 15px;">*</span></label>
+                            <div class="col-sm-4">
+                                <input type="email" ng-model="translatorProfile.translator_request.translator.user_profile.user.email" name="email" class="form-control" id="email">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gender" class="col-sm-1 control-label">Gender <span class="text-danger" style="font-size: 15px;">*</span></label>
+                            <div class="col-sm-4">
+                                <select chosen="{width: '100%'}" ng-model="userProfile.profile.user.gender" name="gender" class="form-control" id="gender" value="admin">
+                                    required>
+                                    <option>male</option>
+                                    <option>female</option>
+                                </select>
+                            </div>
+                            <label for="birth_day" class="col-sm-1 control-label">Birth Day</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="birth_day" class="form-control" id="birth_day" ng-disabled="true" ng-model="userProfile.profile.user.birthday">
+                            </div>
+                        </div>
+                        <div class="form-group mt-20">
+                            <label for="phone" class="col-sm-1 control-label">Phone Number</label>
+                            <div class="col-sm-4 offset">
+                                <input type="text" ng-model="userProfile.profile.user.phone" name="phone" class="form-control" id="phone">
+                            </div>
+                        </div>
+                        <div class="form-group mt-20">
+                            <label for="address" class="col-sm-1 control-label">Address</label>
+                            <div class="col-sm-6 offset">
+                                <textarea name="address" class="form-control" id="address"  rows="2" ng-model="userProfile.profile.address"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group mt-20">
+                            <label for="biography" class="col-sm-1 control-label">Biography</label>
+                            <div class="col-sm-6 offset">
+                                <textarea name="biography" class="form-control" id="biography"  rows="5" ng-model="userProfile.profile.bio"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group mt-20">
+                            <label for="last_login" class="col-sm-1 control-label">Last Login</label>
+                            <div class="col-sm-3 offset">
+                                <input type="text" ng-model="userProfile.profile.user.date_joined" name="last_login" class="form-control underline-input" id="last_login">
+                            </div>
+                            <label for="approve" class="col-sm-1 control-label">Request</label>
+                            <div class="col-sm-3 offset">
+
+                                    <select  chosen="{width: '100%'}" name="request" class="form-control" id="approve" ng-model="translatorProfile.translator_request.is_granted" required>
+                                        <option>Onayla</option>
+                                        <option>Reddet</option>
+                                    </select>
+                            </div>
+                        </div>
+                        <hr>
+                        <section class="tile">
+                            <!-- tile header -->
+                            <div class="tile-header dvd dvd-btm">
+                                <h1 style="cursor: pointer" class="custom-font" data-toggle="collapse" href="#collapseExample"><strong>Translator Details</strong></h1>
+                            </div>
+                            <!-- /tile header -->
+                            <!-- tile body -->
+                            <div class="tile-body">
+                                <div class="collapse" id="collapseExample">
+                                    <div class="form-group mt-20 text-left">
+                                        <div class="col-sm-12">
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <th>Graduation ID</th>
+                                                    <th>Graduation School</th>
+                                                    <th>Graduation Year</th>
+                                                    <th>Graduation Degree</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr ng-repeat="graduation in translatorProfile.translator_request.translator.schools">
+                                                    <td>{{graduation.id}}</td>
+                                                    <td>{{graduation.name}}</td>
+                                                    <td> {{graduation.year}}</td>
+                                                    <td>{{graduation.degree}}</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group mt-20 text-left" >
+                                        <div class="col-sm-12">
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <th>Language ID</th>
+                                                    <th>Language Name</th>
+                                                    <th>Certificates</th>
+                                                    <th>Language Code</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr ng-repeat="lang in translatorProfile.translator_request.translator.languages">
+                                                    <td>{{lang.id}}</td>
+                                                    <td>{{lang.name}}</td>
+                                                    <td> <span style="margin-top: 10px"><a href="#" class="btn btn-blue">Download Certificate  <i class="fa fa-download"></i> </a></span> </td>
+                                                    <td>{{lang.code}}</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- <div id="from_language"
+                                       ng-repeat="lang in job.translator.languages | filter: {id: job.to_language}">
+                                      {{ lang.language.name }}
+                                  </div>-->
+                                    <hr>
+                                    <div class="form-group mt-20 text-left">
+                                        <div class="col-sm-12">
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <th>Certificate ID</th>
+                                                    <th>Certificate Name</th>
+                                                    <th>Certificates</th>
+                                                    <th>Certificate Year</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr ng-repeat="cer in translatorProfile.translator_request.translator.certificates">
+                                                    <td>{{cer.id}}</td>
+                                                    <td>{{cer.name}}</td>
+                                                    <td> <span style="margin-top: 10px"><a href="#" class="btn btn-blue">Download Certificate  <i class="fa fa-download"></i> </a></span> </td>
+                                                    <td>{{cer.year}}</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group mt-20 text-left">
+                                        <div class="col-sm-12">
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <th>Course ID</th>
+                                                    <th>Course Name</th>
+                                                    <th>Course Year</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr ng-repeat="course in translatorProfile.translator_request.translator.courses">
+                                                    <td>{{course.id}}</td>
+                                                    <td>{{course.name}}</td>
+                                                    <td>{{course.year}}</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group mt-20">
+                                        <div class="col-sm-1">
+                                            <button class="btn btn-default btn-ef btn-ef-7 btn-ef-7a mb-10">Sea <i class="fa fa-remove"></i></button>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <button class="btn btn-default btn-ef btn-ef-7 btn-ef-7a mb-10">Science <i class="fa fa-remove"></i></button>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <button class="btn btn-default btn-ef btn-ef-7 btn-ef-7a mb-10">Computer <i class="fa fa-remove"></i></button>
+                                        </div>
+
+                                        <div class="col-sm-1">
+                                            <button class="btn btn-default btn-ef btn-ef-7 btn-ef-7a mb-10">Country <i class="fa fa-remove"></i></button>
+                                        </div>
+
+                                        <div class="col-sm-1">
+                                            <button class="btn btn-default btn-ef btn-ef-7 btn-ef-7a mb-10">Language <i class="fa fa-remove"></i></button>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <button class="btn btn-default btn-ef btn-ef-7 btn-ef-7a mb-10">Education <i class="fa fa-remove"></i></button>
+                                        </div>
+
+                                        <div class="col-sm-1">
+                                            <button class="btn btn-default btn-ef btn-ef-7 btn-ef-7a mb-10">Mathmatic <i class="fa fa-remove"></i></button>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <button class="btn btn-default btn-ef btn-ef-7 btn-ef-7a mb-10">Hospital <i class="fa fa-remove"></i></button>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <button class="btn btn-default btn-ef btn-ef-7 btn-ef-7a mb-10">Agriculture <i class="fa fa-remove"></i></button>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <hr>
+
+                                    <div class="form-group mt-20 text-left">
+                                        <div class="col-sm-1 offset">
+
+                                        </div>
+                                        <div class="col-sm-1 offset">
+                                            <label class="control-label">Job Types : </label>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <label class="checkbox checkbox-custom-alt checkbox-custom-lg">
+                                                <input type="checkbox"><i></i> Live
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <label class="checkbox checkbox-custom-alt checkbox-custom-lg">
+                                                <input type="checkbox"><i></i> Document
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <br>
+                                    <div class="form-group mt-20 text-left">
+                                        <div class="col-sm-2 offset">
+                                            <span><a class="btn btn-blue" id="map"><i class="fa fa-map-marker"></i>  Location : Google Maps</a></span>
+                                        </div>
+                                        <div class="col-sm-1 offset">
+                                            <label for="distance" class="control-label">Max Distance : </label>
+                                        </div>
+                                        <div class="col-sm-1 offset">
+                                            <input type="text" value="50 km" name="courseID" class="form-control col-xs-1" id="distance" disabled>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <br>
+                                    <div class="form-group mt-20 text-left">
+
+                                        <div class="col-sm-2 offset">
+                                            <label for="tstatus" class="control-label">Translator Status</label>
+                                            <div class="form-group" style="margin: 0 5px">
+                                                <select class="form-control col-xs-1" id="tstatus" value="">
+                                                    <option select="">Active</option>
+                                                    <option>Passive</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label for="ban" class="control-label">Translator Ban Status</label>
+                                            <div class="form-group" style="margin: 0 5px">
+                                                <select class="form-control col-xs-1" id="ban" value="">
+                                                    <option selected>Not Baned</option>
+                                                    <option>Baned</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <textarea class="form-control" cols="5" rows="5" placeholder="Note..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- /tile body -->
+                        </section>
+                        <hr>
+                        <div class="form-group mt-20 text-left">
+                            <div class="col-sm-2 offset text-right">
+                                <label for="status" class="control-label">Application Status </label>
+                            </div>
+                            <div class="col-sm-2 offset">
+                                <input type="text" value="ApproveD" name="courseID" class="form-control col-xs-2" id="status" disabled>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-footer" style="padding: 0 100px;">
+                            <button class="btn btn-success b-0 pull-right" ng-click="update()" ng-disabled="form.$invalid">Submit</button>
+                            <button class="btn btn-lightred btn-ef btn-ef-4 btn-ef-4c" ui-sref="home.trequest"><i class="fa fa-arrow-left"></i> Cancel</button>
+                        </div>
+                    </form>
+
+
+                </div>
+                <!-- /tile body -->
+            </section>
+            <!-- /tile -->
+        </div>
+    </div>
+    <!-- /row -->
+</div>
+
+

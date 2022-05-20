@@ -1,0 +1,116 @@
+<div class="page page-orders" ng-controller="adminCtrl">
+
+    <div class="pageheader">
+
+        <h2>Admin</h2>
+
+        <div class="page-bar">
+
+            <ul class="page-breadcrumb">
+                <li>
+                    <a ui-sref="app.dashboard"><i class="fa fa-home"></i> CuzAdmin</a>
+                </li>
+                <li>
+                    <a ui-sref="admin.user">Manage Admin</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+    <!-- row -->
+    <div class="row">
+        <div class="col-md-12">
+            <!-- tile -->
+            <section class="tile" fullscreen="isFullscreen01">
+                <!-- tile header -->
+                <div class="tile-header dvd dvd-btm">
+                    <h1 class="custom-font"><strong>Manage </strong>Admin</h1>
+                    <ul class="controls">
+                        <li>
+                            <a class="btn-nostyle" ui-sref="home.newAdmin" ng-click="editUser($index)"> <i class="fa fa-plus mr-5"></i> Add Admin</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /tile header -->
+                <!-- tile body -->
+                <div class="tile-body">
+                <form name="frm_search" class="form-horizontal form-validation" novalidate>
+                    <div class="row">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <input type="text" name="frm_search" class="form-control" placeholder="Search..." ng-keyup="$event.keyCode == 13 ? model.search() : null" ng-model="model.searchData" >
+                                <span class="input-group-btn">
+                                  <button class="btn btn-default"  ng-click="model.search()" type="button">Search!</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+                    <div class="table-responsive">
+                        <div class="table-responsive">
+                            <table ng-table="tableParams" class="table table-custom" template-pagination="custom/pager">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Member Date</th>
+                                    <th></th>
+                                </tr>
+                                <tr ng-repeat="admin in model.data | filter: model.searchData">
+                                    <td data-title="'ID'" sortable="'id'">
+                                        <a>{{admin.id}}</a>
+                                    </td>
+                                    <td data-title="'Username'">
+                                        <a href="#!/home/showAdmin/{{admin.user.username}}" name="{{admin.user.username}}" ng-click="editAdmin($event)"> {{admin.user.username}} </a>
+                                    </td>
+                                    <td data-title="'email'">
+                                        {{admin.user.email}}
+                                    </td>
+                                    <td data-title="'FirstName'">
+                                        {{admin.user.first_name}}
+                                    </td>
+                                    <td data-title="'LastName'">
+                                        {{admin.user.last_name}}
+                                    </td>
+                                    <td data-title="'Date'" sortable="'created_at'">
+                                        {{admin.user.date_joined | date: 'mediumDate'}}
+                                    </td>
+                                    <td data-title="'Delete'">
+                                        <button class="btn-nostyle delete"><a href="#!/home/editAdmin/{{admin.user.username}}" name="{{admin.user.username}}" ng-click="editAdmin($event)">Edit</a>
+                                        </button>
+                                        <button class="btn-nostyle delete"><a href="#!/home/admin" name="{{admin.user.username}}" ng-click="delAdmin($event)">Delete</a></button>
+                                    </td>
+                            </table>
+                        </div>
+                    </div>
+                    </td>
+                    </tr>
+                </div>
+                <div class="row text-right" style="padding-right: 13px;">
+                    <nav>
+                        <ul class="pagination pagination">
+                            <li ng-class="{disabled: model.isFirstPage()}"><a href ng-click="model.setPage(1)" title="First Page"> &laquo; </a></li>
+                            <li ng-class="{disabled: model.isFirstPage()}"><a href ng-click="model.previousPage()" title="Back Page">Back</a></li>
+                            <li ng-repeat="page in model.range()" ng-class="{active: model.isCurrentPage(page)}" ng-click="model.setPage(page)" ng-if="model.isInRange(page)"><a
+                                    style="cursor: pointer">{{page}}</a></li>
+                            <li><a href ng-click="model.pagePrompt()" title="Next Page" ng-if="model.shouldShowJumpPage()">Page...</a></li>
+                            <li ng-class="{disabled: model.isLastPage()}"><a href ng-click="model.nextPage()" title="Next Page">Next</a></li>
+                            <li ng-class="{disabled: model.isLastPage()}"><a href ng-click="model.setLastPage()" title="Last Page"> &raquo; </a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- /tile body -->
+            </section>
+            <!-- /tile -->
+        </div>
+    </div>
+    <!-- /row -->
+</div>
+
+

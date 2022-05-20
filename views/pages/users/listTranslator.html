@@ -1,0 +1,128 @@
+<div class="page page-users" ng-controller="translatorsCtrl">
+
+    <div class="pageheader">
+
+        <h2>Translators</h2>
+
+        <div class="page-bar">
+
+            <ul class="page-breadcrumb">
+                <li>
+                    <a ui-sref="home.dashboard"><i class="fa fa-home"></i> CuzAdmin</a>
+                </li>
+                <li>
+                    <a>Manage Translators</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- row -->
+    <div class="row">
+
+
+        <div class="col-md-12">
+
+            <!-- tile -->
+            <section class="tile" fullscreen="isFullscreen01">
+
+                <!-- tile header -->
+                <div class="tile-header dvd dvd-btm">
+                    <h1 class="custom-font"><strong>Manage </strong>Users</h1>
+                    <ul class="controls">
+
+
+                    </ul>
+                </div>
+                <!-- /tile header -->
+
+                <!-- tile body -->
+                <div class="tile-body">
+                    <form name="frm_search" class="form-horizontal form-validation" novalidate>
+                        <div class="row">
+                            <div class="col-md-6"></div>
+                            <div class="col-md-3"></div>
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    <input type="text" name="frm_search" class="form-control" placeholder="Search..." ng-keyup="$event.keyCode == 13 ? model.search() : null" ng-model="model.searchData" >
+                                    <span class="input-group-btn">
+                                  <button class="btn btn-default"  ng-click="model.search()" type="button">Search!</button>
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                    <div class="table-responsive">
+                        <table ng-table="tableParams" class="table table-custom" template-pagination="custom/pager">
+                            <tr>
+                                <th>#</th>
+                                <th>UserName</th>
+                                <th>Email</th>
+                                <th>Member Date</th>
+                                <th>
+                                    Role
+                                </th>
+
+                                <th></th>
+                                <th>Action</th>
+                            </tr>
+
+                            <tr ng-repeat="translator in model.data | filter:model.searchData ">
+                                <td>
+                                    {{translator.id}}
+                                </td>
+                                <td>
+                                    <a href="#!/home/showTranslator/{{translator.user_profile.user.username}}" name="{{translator.user_profile.user.username}}"  ng-click="editsTranslator($event)">{{translator.user_profile.user.username}}</a>
+                                </td>
+                                <td>
+                                    <a href="mailto:{{translator.user_profile.user.email}}" target="_top">{{translator.user_profile.user.email}}</a>
+                                </td>
+                                <td>
+                                    {{translator.user_profile.user.date_joined | date : format : shortDate }}
+                                </td>
+
+                                <td>
+                                    {{translator.translator === null ? "Customer" : "Translator"; }}
+
+                                </td>
+                                <td>
+                  <span class="label">
+                    translated
+                  </span>
+                                </td>
+                                <td data-title="'Actions'" class="actions">
+                                    <button class="btn-nostyle edit"><a href="#!/home/editTranslator/{{translator.user_profile.user.username}}" name="{{translator.user_profile.user.username}}"
+                                                                        ng-click="editsTranslator($event)">Edit</a></button>
+                                    <!--angular 1.6 dan önce link için # di 1.6 dan sonra #! oldu -->
+                                    <button class="btn-nostyle delete"><a href="#!/home/translatorsList" name="{{translator.user_profile.user.username}}" ng-click="delTranslator($event)">
+                                        Delete </a></button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- /tile body -->
+            </section>
+            <!-- /tile -->
+            <div class="row text-right" style="padding-right: 13px;">
+                <nav>
+                    <ul class="pagination pagination">
+                        <li  ng-class="{disabled: model.isFirstPage()}"><a href ng-click="model.setPage(1)" title="First Page"> &laquo; </a></li>
+                        <li ng-class="{disabled: model.isFirstPage()}"><a href ng-click="model.previousPage()" title="Back Page">Back</a></li>
+                        <li ng-repeat="page in model.range()" ng-class="{active: model.isCurrentPage(page)}" ng-click="model.setPage(page)" ng-if="model.isInRange(page)"><a style="cursor: pointer">{{page}}</a></li>
+                        <li><a href ng-click="model.pagePrompt()" title="Next Page" ng-if="model.shouldShowJumpPage()">Page...</a></li>
+                        <li ng-class="{disabled: model.isLastPage()}"><a href ng-click="model.nextPage()" title="Next Page">Next</a></li>
+                        <li ng-class="{disabled: model.isLastPage()}"><a href ng-click="model.setLastPage()" title="Last Page"> &raquo; </a></li>
+                    </ul>
+                </nav>
+            </div>
+    </div>
+    <!-- /row -->
+
+</div>
+
+

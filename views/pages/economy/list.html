@@ -1,0 +1,159 @@
+<div class="page page-users"  ng-controller="Main">
+
+  <div class="pageheader">
+
+    <h2>Economy</h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="home.dashboard"><i class="fa fa-home"></i> CuzAdmin</a>
+        </li>
+        <li>
+          <a ui-sref="home.economy">Manage Economy</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+
+  <!-- row -->
+  <div class="row">
+
+
+    <div class="col-md-12">
+
+      <!-- tile -->
+      <section class="tile" fullscreen="isFullscreen01">
+
+        <!-- tile header -->
+        <div class="tile-header dvd dvd-btm">
+          <h1 class="custom-font"><strong>Manage </strong>Economy</h1>
+          <ul class="controls">
+
+
+
+          </ul>
+        </div>
+        <!-- /tile header -->
+
+        <!-- tile body -->
+        <div class="tile-body">
+
+
+          <div class="row">
+            <div class="col-md-6"></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3">
+              <div class="input-group">
+                <input type="text" class="form-control col-sm-2" placeholder="Search..." ng-model="searchText">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" ng-click="searchButton()" type="button">Search!</button>
+                </span>
+              </div>
+
+
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table ng-table="tableParams" class="table table-custom" template-pagination="custom/pager">
+
+              <tr>
+                <th>#</th>
+                <th>Job Name</th>
+                <th>Whose Job</th>
+                <th>Price($)</th>
+                <th>State</th>
+                <th></th>
+                <th>Action</th>
+              </tr>
+
+              <tr ng-repeat="item in eco" >
+                <td  >
+                  {{item.id}}
+                </td>
+                <td  >
+                  <a href="#">{{item.JobName}}</a>
+                </td>
+                <td >
+                  {{item.JobUser}}
+                </td>
+                <td >
+                  {{item.Price}}
+                </td>
+                <td >
+                  {{item.State}}
+                </td>
+                <td >
+                  <span class="label">
+                    translated
+                  </span>
+                </td>
+
+                <td data-title="'Actions'" class="actions">
+                  <button  class="btn-nostyle edit" ><a  ui-sref="home.economy">Edit</a> </button>  <!--angular 1.6 dan önce link için # di 1.6 dan sonra #! oldu -->
+                  <button class="btn-nostyle delete" ng-click="delete($index)">Delete</button>
+                </td>
+
+              </tr>
+
+              <!--
+              <tr ng-repeat="user in $data">
+                <td data-title="'Name'" sortable="'name'">
+                  <a href="javascript:;" ui-sref="app.users.show({ id: user.$id })">{{user.name}}</a>
+                </td>
+                <td data-title="'Email'" sortable="'email'">
+                  <a href="javascript:;" ui-sref="app.users.show({ id: user.$id })">{{user.email}}</a>
+                </td>
+                <td data-title="'Address'" sortable="'address.street'">
+                  {{user.address.street}}, {{user.address.city}} {{user.address.zip}}, {{user.address.country}}
+                </td>
+                <td data-title="'Phone'" sortable="'phone'">
+                  {{user.phone}}
+                </td>
+                <td data-title="'Role'" sortable="'role'">
+                  {{user.role}}
+                </td>
+                <td data-title="'Actions'" class="actions" style="width: 320px;">
+                  <button class="btn-nostyle edit" ui-sref="app.users.edit({ id: user.$id })">Edit</button>
+                  <button class="btn-nostyle delete" ng-click="delete(user)">Delete</button>
+                  <button class="btn-nostyle passReset" ng-click="passReset(user)">Password reset</button>
+                </td>
+
+              </tr>
+              -->
+            </table>
+            <script type="text/ng-template" id="custom/pager">
+              <div class="row text-right" style="padding-right: 13px;">
+                <nav>
+                  <ul class="pagination pagination">
+                    <li  ng-class="{disabled: noPrevious()}"><a href ng-click="getPageRequestList(0)" title="First Page"> &laquo; </a></li>
+                    <li ng-class="{disabled: noPrevious()}"><a href ng-click="getPreviousPage()" title="Back Page">Back</a></li>
+                    <li ng-repeat="page in pages" ng-class="{active: isActive(page)}" ng-click="getPageRequestList($index)"><a style="cursor: pointer">{{page}}</a></li>
+                    <li ng-class="{disabled: noNext()}"><a href ng-click="getNextPage()" title="Next Page">Next</a></li>
+                    <li ng-class="{disabled: noNext()}"><a href ng-click="getPageRequestList(page_counts - 1)" title="Last Page"> &raquo; </a></li>
+                  </ul>
+                </nav>
+              </div>
+            </script>
+
+          </div>
+
+
+        </div>
+        <!-- /tile body -->
+
+      </section>
+      <!-- /tile -->
+
+    </div>
+
+  </div>
+  <!-- /row -->
+
+</div>
+
+

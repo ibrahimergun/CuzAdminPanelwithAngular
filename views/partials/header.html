@@ -1,0 +1,156 @@
+
+    <header class="clearfix">
+
+        <!-- Branding -->
+        <div class="branding">
+            <a class="brand" ui-sref="/">
+                <span><strong>Cuz</strong>Admin</span>
+            </a>
+            <a role="button" tabindex="0" class="offcanvas-toggle visible-xs-inline"><i class="fa fa-bars"></i></a>
+        </div>
+        <!-- Branding end -->
+
+        <!-- Left-side navigation -->
+        <ul class="nav-left pull-left list-unstyled list-inline">
+            <li class="sidebar-collapse divided-right">
+                <a role="button" tabindex="0" class="collapse-sidebar">
+                    <i class="fa fa-outdent"></i>
+                </a>
+            </li>
+
+            <ul class="dropdown-menu with-arrow animated littleFadeInUp" role="menu">
+                <li>
+
+                    <ul class="color-schemes list-inline">
+                        <li class="title">Header Color:</li>
+                        <li><a role="button" tabindex="0" class="scheme-drank header-scheme" data-scheme="scheme-default"></a></li>
+                        <li><a role="button" tabindex="0" class="scheme-black header-scheme" data-scheme="scheme-black"></a></li>
+                        <li><a role="button" tabindex="0" class="scheme-greensea header-scheme" data-scheme="scheme-greensea"></a></li>
+                        <li><a role="button" tabindex="0" class="scheme-cyan header-scheme" data-scheme="scheme-cyan"></a></li>
+                        <li><a role="button" tabindex="0" class="scheme-lightred header-scheme" data-scheme="scheme-lightred"></a></li>
+                        <li><a role="button" tabindex="0" class="scheme-light header-scheme" data-scheme="scheme-light"></a></li>
+                        <li class="title">Branding Color:</li>
+                        <li><a role="button" tabindex="0" class="scheme-drank branding-scheme" data-scheme="scheme-default"></a></li>
+                        <li><a role="button" tabindex="0" class="scheme-black branding-scheme" data-scheme="scheme-black"></a></li>
+                        <li><a role="button" tabindex="0" class="scheme-greensea branding-scheme" data-scheme="scheme-greensea"></a></li>
+                        <li><a role="button" tabindex="0" class="scheme-cyan branding-scheme" data-scheme="scheme-cyan"></a></li>
+                        <li><a role="button" tabindex="0" class="scheme-lightred branding-scheme" data-scheme="scheme-lightred"></a></li>
+                        <li><a role="button" tabindex="0" class="scheme-light branding-scheme" data-scheme="scheme-light"></a></li>
+                        <li class="title">Sidebar Color:</li>
+                        <li><a role="button" tabindex="0" class="scheme-drank sidebar-scheme" data-scheme="scheme-default"></a></li>
+                        <li><a role="button" tabindex="0" class="scheme-black sidebar-scheme" data-scheme="scheme-black"></a></li>
+                        <li><a role="button" tabindex="0" class="scheme-greensea sidebar-scheme" data-scheme="scheme-greensea"></a></li>
+                        <li><a role="button" tabindex="0" class="scheme-cyan sidebar-scheme" data-scheme="scheme-cyan"></a></li>
+                        <li><a role="button" tabindex="0" class="scheme-lightred sidebar-scheme" data-scheme="scheme-lightred"></a></li>
+                        <li><a role="button" tabindex="0" class="scheme-light sidebar-scheme" data-scheme="scheme-light"></a></li>
+                        <li class="title">Active Color:</li>
+                        <li><a role="button" tabindex="0" class="scheme-drank color-scheme" data-scheme="drank-scheme-color"></a></li>
+                        <li><a role="button" tabindex="0" class="scheme-black color-scheme" data-scheme="black-scheme-color"></a></li>
+                        <li><a role="button" tabindex="0" class="scheme-greensea color-scheme" data-scheme="greensea-scheme-color"></a></li>
+                        <li><a role="button" tabindex="0" class="scheme-cyan color-scheme" data-scheme="cyan-scheme-color"></a></li>
+                        <li><a role="button" tabindex="0" class="scheme-lightred color-scheme" data-scheme="lightred-scheme-color"></a></li>
+                        <li><a role="button" tabindex="0" class="scheme-light color-scheme" data-scheme="light-scheme-color"></a></li>
+                    </ul>
+
+                </li>
+
+                <li>
+                    <div class="form-group">
+                        <div class="row">
+                            <label class="col-xs-8 control-label">Fixed header</label>
+                            <div class="col-xs-4 control-label">
+                                <div class="onoffswitch lightred small">
+                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="fixed-header" checked="">
+                                    <label class="onoffswitch-label" for="fixed-header">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="form-group">
+                        <div class="row">
+                            <label class="col-xs-8 control-label">Fixed aside</label>
+                            <div class="col-xs-4 control-label">
+                                <div class="onoffswitch lightred small">
+                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="fixed-aside" checked="">
+                                    <label class="onoffswitch-label" for="fixed-aside">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            </li>
+        </ul>
+        <!-- Left-side navigation end -->
+
+
+
+
+
+        <!-- Right-side navigation -->
+        <ul class="nav-right pull-right list-inline" style="padding-right: 30px;">
+
+
+
+
+
+            <!-- nav profil -->
+            <li class="dropdown nav-profile">
+
+                <a href class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="assets/images/profile-photo.jpg" alt="" class="img-circle size-30x30">
+                    <span>John Douey <i class="fa fa-angle-down"></i></span>
+                </a>
+
+                <ul class="dropdown-menu animated littleFadeInRight" role="menu" ng-controller="Main">
+
+                    <li>
+                        <a role="button" tabindex="0">
+                            <span class="badge bg-greensea pull-right">86%</span>
+                            <i class="fa fa-user"></i>Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a role="button" tabindex="0">
+                            <span class="label bg-lightred pull-right">new</span>
+                            <i class="fa fa-check"></i>Tasks
+                        </a>
+                    </li>
+                    <li>
+                        <a role="button" tabindex="0">
+                            <i class="fa fa-cog"></i>Settings
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a role="button" tabindex="0">
+                            <i class="fa fa-lock"></i>Lock
+                        </a>
+                    </li>
+                    <li>
+                        <a role="button" tabindex="0" ng-click="Logout()">
+                            <i class="fa fa-sign-out"></i>Logout
+                        </a>
+                    </li>
+
+                </ul>
+
+            </li>
+
+
+        </ul>
+        <!-- Right-side navigation end -->
+
+
+
+    </header>
+

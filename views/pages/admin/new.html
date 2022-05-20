@@ -1,0 +1,76 @@
+<div class="page page-users" ng-controller="newAdmin">
+
+    <div class="pageheader">
+
+        <h2>Super Visor</h2>
+
+        <div class="page-bar">
+
+            <ul class="page-breadcrumb">
+                <li>
+                    <a ui-sref="/"><i class="fa fa-home"></i> CuzAdmin</a>
+                </li>
+                <li>
+                    <a>Add System Management</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- row -->
+    <div class="row">
+        <div class="col-md-12">
+            <!-- tile -->
+            <section class="tile tile-simple">
+
+                <!-- tile body -->
+                <div class="tile-body">
+                    <form name="frm" class="form-horizontal form-validation" novalidate>
+                        <div class="form-group mt-20">
+                            <label for="username" class="col-sm-2 control-label">User Name</label>
+                            <div class="col-sm-8 offset">
+                                <input type="text" ng-model="admin.username" name="username" class="form-control" id="username" required>
+                            </div>
+                        </div>
+                        <div class="form-group mt-20">
+                            <label for="first_name" class="col-sm-2 control-label">First Name</label>
+                            <div class="col-sm-8 offset">
+                                <input type="text" ng-model="admin.first_name" name="first_name" class="form-control" id="first_name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-20">
+                            <label for="last_name" class="col-sm-2 control-label">Last Name</label>
+                            <div class="col-sm-8 offset">
+                                <input type="text" ng-model="admin.last_name" name="last_name" class="form-control" id="last_name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-sm-2 control-label">Email <span class="text-danger" style="font-size: 15px;">*</span></label>
+                            <div class="col-sm-8">
+                                <input type="email" ng-model="admin.email" name="email" class="form-control" id="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Password</label>
+                            <div class="col-sm-8">
+                                <input type="text" name="pass" class="form-control" ng-model="admin.password" required>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-footer" style="padding: 0 100px;">
+                            <button class="btn btn-success b-0 pull-right" ng-disabled="frm.$invalid" ng-click="addAdmin()">Submit</button>
+                            <a class="btn btn-lightred btn-ef btn-ef-4 btn-ef-4c" href="#!/home/admin"><i class="fa fa-arrow-left"></i>Cancel</a>
+                        </div>
+                    </form>
+                </div>
+                <!-- /tile body -->
+
+            </section>
+            <!-- /tile -->
+        </div>
+    </div>
+    <!-- /row -->
+</div>
+
+

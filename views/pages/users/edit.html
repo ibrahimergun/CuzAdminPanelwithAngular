@@ -1,0 +1,139 @@
+<div class="page page-users" ng-controller="editUsers">
+
+    <div class="pageheader">
+
+        <h2>Edit User | {{userProfile.profile.user.username}}</h2>
+
+    </div>
+    <!-- row -->
+    <div class="row">
+
+        <div class="col-md-12">
+            <!-- tile -->
+            <section class="tile tile-simple">
+
+                <!-- tile body -->
+                <div class="tile-body">
+
+                    <form name="form" class="form-horizontal form-validation" role="form" novalidate>
+
+
+                        <div class="form-group mt-20">
+
+                            <div class="col-sm-2 text-center">
+                                <aside>
+                                    <div class="thumb thumb-xl">
+                                        <img src="assets/images/random-avatar7.jpg" alt="" class="img-circle">
+                                    </div>
+                                </aside>
+                            </div>
+
+                            <div class="col-sm-2 offset">
+                                <label for="ID" class="control-label">ID</label>
+                                <input type="text"  class="form-control underline-input"  ng-model="userProfile.profile.id" id="ID" disabled>
+                            </div>
+                            <div class="col-sm-2 offset">
+
+                            </div>
+                            <div class="col-sm-2 offset">
+                                <label  for="Date" class="control-label">Date Joined</label>
+                                <input  type="text" ng-model="userProfile.profile.user.date_joined"  class="form-control underline-input" id="Date" disabled >
+                            </div>
+
+                        </div>
+
+                        <div class="form-group mt-20">
+                            <label for="username" class="col-sm-1 control-label">User Name</label>
+                            <div class="col-sm-4 offset">
+                                <input type="text" ng-model="userProfile.profile.user.username"  class="form-control" id="username">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group mt-20">
+                            <label for="first_name" class="col-sm-1 control-label">First Name</label>
+                            <div class="col-sm-4 offset">
+                                <input type="text" ng-model="userProfile.profile.user.first_name" name="first_name" class="form-control" id="first_name">
+                            </div>
+                            <label for="last_name" class="col-sm-1 control-label">Last Name</label>
+                            <div class="col-sm-4 offset">
+                                <input type="text" ng-model="userProfile.profile.user.last_name" name="last_name" class="form-control" id="last_name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="col-sm-1 control-label">Email <span class="text-danger" style="font-size: 15px;">*</span></label>
+                            <div class="col-sm-4">
+                                <input type="email" ng-model="userProfile.profile.user.email" name="email" class="form-control" id="email">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gender" class="col-sm-1 control-label">Gender <span class="text-danger" style="font-size: 15px;">*</span></label>
+                            <div class="col-sm-4">
+                                <select chosen="{width: '100%'}" ng-model="userProfile.profile.user.gender" name="gender" class="form-control" id="gender" value="admin">
+                                    required>
+                                    <option>male</option>
+                                    <option>female</option>
+                                </select>
+                            </div>
+                            <label for="birth_day" class="col-sm-1 control-label">Birth Day</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="birth_day" class="form-control" id="birth_day" ng-disabled="true" ng-model="userProfile.profile.user.birthday">
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-20">
+                            <label for="phone" class="col-sm-1 control-label">Phone Number</label>
+                            <div class="col-sm-4 offset">
+                                <input type="text" ng-model="userProfile.profile.user.phone" name="phone" class="form-control" id="phone">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group mt-20">
+                            <label for="address" class="col-sm-1 control-label">Address</label>
+                            <div class="col-sm-6 offset">
+                                <textarea name="address" class="form-control" id="address"  rows="2" ng-model="userProfile.profile.address"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group mt-20">
+                            <label for="biography" class="col-sm-1 control-label">Biography</label>
+                            <div class="col-sm-6 offset">
+                                <textarea name="biography" class="form-control" id="biography"  rows="5" ng-model="userProfile.profile.bio"></textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group mt-20">
+                            <label for="last_login" class="col-sm-1 control-label">Last Login</label>
+                            <div class="col-sm-3 offset">
+                                <input type="text" ng-model="userProfile.profile.user.date_joined" name="last_login" class="form-control underline-input" id="last_login">
+                            </div>
+                        </div>
+                        <hr>
+
+                        <hr>
+                        <div class="form-footer" style="padding: 0 100px;">
+                            <button class="btn btn-success b-0 pull-right" ng-click="update()" ng-disabled="form.$invalid">Submit</button>
+                            <a class="btn btn-lightred btn-ef btn-ef-4 btn-ef-4c" ui-sref="home.users"><i class="fa fa-arrow-left"></i> Cancel</a>
+                        </div>
+                    </form>
+
+
+                </div>
+                <!-- /tile body -->
+
+            </section>
+            <!-- /tile -->
+
+        </div>
+
+    </div>
+    <!-- /row -->
+
+
+
+
+</div>
+
+

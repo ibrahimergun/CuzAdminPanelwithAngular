@@ -1,0 +1,33 @@
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /assets
+  static_dir: assets
+
+- url: /controller
+  static_dir: controller
+
+- url: /views
+  static_dir: views
+
+- url: /views/partials
+  static_dir: views/partials
+
+- url: /views/pages
+  static_dir: views/pages
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+
+- name: jinja2
+  version: latest

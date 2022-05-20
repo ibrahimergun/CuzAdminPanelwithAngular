@@ -1,0 +1,101 @@
+<div class="page page-users">
+
+  <div class="pageheader">
+
+    <h2>{{support.JobName}}</h2>
+
+    <div class="page-bar">
+
+      <ul class="page-breadcrumb">
+        <li>
+          <a ui-sref="home.dashboard"><i class="fa fa-home"></i> CuzAdmin</a>
+        </li>
+        <li>
+          <a>Manage Support</a>
+        </li>
+        <li>
+          <a >{{support.JobName}}</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+
+  <!-- row -->
+  <div class="row">
+
+
+    <div class="col-md-12">
+
+      <!-- tile -->
+      <section class="tile tile-simple">
+
+
+        <!-- tile body -->
+        <div class="tile-body">
+
+
+          <ul class="list-unstyled m-20">
+            <li ><strong>Job Title:</strong> {{support.JobName}}</li>
+            <li><strong>User Name</strong> {{support.JobUser}}</li>
+            <li><strong>Subject:</strong> {{support.TranslateUser}}</li>
+            <li><strong>Date:</strong> {{support.Subject}}</li>
+            <br><br>
+            <li><strong>Message:</strong><br><br> {{support.Message}} Messages</li>
+            <br><br>
+
+
+          </ul>
+
+
+
+
+          <div class="form-footer">
+            <button class="btn btn-lightred btn-ef btn-ef-4 btn-ef-4c" ui-sref="home.support"><i class="fa fa-arrow-left"></i> Back</button>
+          </div>
+
+        </div>
+        <!-- /tile body -->
+
+
+      </section>
+      <!-- /tile -->
+
+    </div>
+
+  </div>
+
+  <section class="tile">
+
+    <!-- tile header -->
+    <div class="tile-header dvd dvd-btm">
+      <h1 style="cursor: pointer" class="custom-font" data-toggle="collapse" href="#collapseExample"><strong>Quick Answer</strong></h1>
+      <ul class="controls text-left">
+        <li><span style="line-height: 36px; cursor: pointer; margin: 0 5px;" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Toggle Collapse</span></li>
+      </ul>
+    </div>
+    <!-- /tile header -->
+
+    <!-- tile body -->
+    <div class="tile-body">
+
+      <div class="collapse" id="collapseExample">
+        <div class="well" class="note-editable" contenteditable="true">
+          Write a answer...
+        </div>
+
+        <button class="btn btn-blue btn-ef btn-ef-7 btn-ef-7h" activate-button="success"><i class="fa fa-envelope"></i> Send answer</button>
+      </div>
+
+    </div>
+    <!-- /tile body -->
+
+  </section>
+
+  <!-- /row -->
+
+
+</div>
+
+
